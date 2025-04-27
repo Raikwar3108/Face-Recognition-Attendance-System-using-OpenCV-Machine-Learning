@@ -61,6 +61,7 @@ else:
         faces_var = pickle.load(f)
     print(len(faces_var), len(list_face_data))
     
-    faces_var = np.append(faces_var,list_face_data, axis=0)
+    # faces_var = np.append(faces_var,list_face_data, axis=0)
+    faces_var = np.vstack([faces_var, list_face_data])
     with open('data/list_face_data.pkl', 'wb') as f:
-        pickle.dump(user_names,f)
+        pickle.dump(faces_var,f)
